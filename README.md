@@ -23,7 +23,7 @@ public interface UserService {
      * @throws BreakerException
      */
     @API(api = "/user/{uid}", requestMethod = APIRequestMethod.GET)
-    RespModel<User> getPaidBook(@PathVariable(name="uid") String uid) throws BreakerException;
+    RespModel<User> getUser(String uid) throws BreakerException;
 }
 ```
 
@@ -38,7 +38,7 @@ public class UserServiceImpl implements UserService{
      * @return
      * @throws BreakerException
      */
-    RespModel<User> getPaidBook(@PathVariable(name="uid") String uid) throws BreakerException{
+    RespModel<User> getUser(String uid) throws BreakerException{
         //相关业务逻辑
         return new User;
     }
@@ -57,7 +57,7 @@ public class UserServiceFallback implements UserService{
      * @return
      * @throws BreakerException
      */
-    RespModel<User> getPaidBook(@PathVariable(name="uid") String uid) throws BreakerException{
+    RespModel<User> getUser(String uid) throws BreakerException{
         //服务降级相关逻辑
         logger.info("服务降级相关逻辑");
         return new User;
