@@ -1,0 +1,5 @@
+.*
+src/main/pom.xml
+bxyd.iml
+target
+!.gitignore
